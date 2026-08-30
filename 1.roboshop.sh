@@ -21,6 +21,8 @@ for instance in $@
 do
    INSTANCE_ID=$(aws ec2 run-instances --image-id $AMI_ID --instance-type t3.micro --security-group-ids $SG_ID --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$instance}]" --output text --query 'Instances[0].InstanceId')
 
+sleep 5 # AWS needs a few seconds to boot the instance before an IP is assigned
+
 if [ $instance != "frontend" ]; then # != will be used for string comaparison
     IP=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID --output text --query 'Reservations[0].Instances[0].PrivateIpAddress')
 else
