@@ -1,5 +1,5 @@
-# keeping mongodb repo configuration content in a separate file for reusability
-# -----------------------------------------------------------------------------
+# keeping mongodb repo configuration content in a separate file
+# -------------------------------------------------------------
 
 [mongodb-org-7.0]
 name=MongoDB Repository
