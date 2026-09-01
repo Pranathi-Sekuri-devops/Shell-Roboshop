@@ -18,10 +18,6 @@ log_file="$logs_folder/$script_name.log"
 mkdir -p $logs_folder  
 echo "script execution started at : $(date)" | tee -a $log_file
 
-M=mongodb
-dnf list installed $M &>> $log_file
-check $? $M
-
 check() 
 {
     if [ $1 -ne 0 ]; then
@@ -59,6 +55,8 @@ validate()
     fi
 }
 
-
+M=mongodb
+dnf list installed $M &>> $log_file
+check $? $M
     
     
