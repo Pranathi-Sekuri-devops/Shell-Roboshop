@@ -60,7 +60,7 @@ validate()
 }
 
 M=mongodb
-dnf list installed "*$M*" &>> $log_file
+dnf list installed "$M" &>> $log_file
 check $? $M
     
     
