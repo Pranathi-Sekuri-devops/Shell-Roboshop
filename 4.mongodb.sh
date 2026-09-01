@@ -10,13 +10,13 @@ logs_folder="/var/log/shell-roboshop"
 script_name=$(echo $0 | cut -d "." -f2) # removing '4', '.sh' parts from the filename 4.mongodb.sh 
 log_file="$logs_folder/$script_name.log"
 
-mkdir -p $logs_folder  
-echo "script execution started at : $(date)" | tee -a $log_file
-
 if [ $user -ne 0 ]; then
     echo -e " $R Error : user should have root privileges $W"
     exit 1
 fi
+
+mkdir -p $logs_folder  
+echo "script execution started at : $(date)" | tee -a $log_file
 
 M=mongodb
 dnf list installed $M &>> $log_file
