@@ -40,6 +40,10 @@ check()
         systemctl start mongod &>> $log_file
         validate $? "Starting $M"
 
+        echo -e " $Y checking $2 status... $W" | tee -a $log_file
+        systemctl status mongod &>> $log_file
+        validate $? "Checking $M status"
+
     else
         echo -e " $G $2 is already installed ! $W" | tee -a $log_file
     fi
