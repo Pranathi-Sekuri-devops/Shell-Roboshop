@@ -26,9 +26,9 @@ do
         IP=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID --output text --query 'Reservations[0].Instances[0].PublicIpAddress')
         RECORD_NAME="$DOMAIN_NAME"  # prananya.in
    fi
-    
-   echo "Assigned IP for $INSTANCE : $IP"
 
+   echo "Assigned PrivateIP for $INSTANCE : $IP"
+   
    # 4. Update Route 53 DNS Record
    #-------------------------------
    echo "Updating Route 53 record for $RECORD_NAME..."
