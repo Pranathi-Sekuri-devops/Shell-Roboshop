@@ -1,5 +1,5 @@
 #!/bin/bash
-# version-1
+# version-3
 # ==========
 AMI_ID="ami-0220d79f3f480ecf5" 
 SG_ID="sg-0c13f122aeebc9259"
