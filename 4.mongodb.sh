@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# mongodb installation script
+# -----------------------------
+
 user=$(id -u)
 R="\e[31m"
 G="\e[32m"
